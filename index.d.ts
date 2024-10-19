@@ -1,20 +1,14 @@
-// Type for the email category
-type EmailCategory =
-  | "personal"
-  | "disposable"
-  | "educational"
-  | "business"
-  | "unknown";
+declare module "verifymailjs" {
+  interface VerificationResult {
+    isValid: boolean;
+    category:
+      | "personal"
+      | "business"
+      | "educational"
+      | "disposable"
+      | "unknown";
+    reason?: string;
+  }
 
-// Interface for the verification result
-interface VerificationResult {
-  isValid: boolean;
-  category: EmailCategory;
-  reason?: string;
+  export function verifyEmail(email: string): VerificationResult;
 }
-
-// Main function declaration
-declare function verifyEmail(email: string): Promise<VerificationResult>;
-
-// Export the main function and types
-export { verifyEmail, EmailCategory, VerificationResult };
