@@ -1,17 +1,18 @@
-# ✉️ verifymailjs - Email Verifier
+# 📧 verifmailjs - Email Verifier 🚀
 
-A robust and modern JavaScript library for validating and categorizing email addresses.
+A lightweight and fast JavaScript library for validating and categorizing email addresses. 🛠️
 
-## ✨ Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Features 🎯
 
 - ✅ Validate email format and domain
-- 📊 Categorize emails (personal, business, educational, disposable)
-- 📬 Check for MX records
-- 🔗 Verify SMTP connection
-- 🛠️ TypeScript support
-- 🚀 Modern JavaScript (ES6+) syntax
+- 🗂️ Categorize emails (personal, business, educational, disposable)
+- 🔒 Check against blacklisted domains
+- 💨 No external dependencies
+- ⚡ Fast and synchronous operation
 
-## 📦 Installation
+## Installation 🛠️
 
 Install the package using npm:
 
@@ -25,23 +26,15 @@ Or using yarn:
 yarn add verifymailjs
 ```
 
-## Usage
+## Usage 🖥️
 
 ### Basic Usage
 
 ```javascript
 import { verifyEmail } from "verifymailjs";
 
-async function checkEmail(email) {
-  try {
-    const result = await verifyEmail(email);
-    console.log(result);
-  } catch (error) {
-    console.error("Error verifying email:", error);
-  }
-}
-
-checkEmail("user@example.com");
+const result = verifyEmail("user@example.com");
+console.log(result);
 ```
 
 ### TypeScript Usage
@@ -49,23 +42,15 @@ checkEmail("user@example.com");
 ```typescript
 import { verifyEmail, VerificationResult } from "verifymailjs";
 
-async function checkEmail(email: string): Promise<void> {
-  try {
-    const result: VerificationResult = await verifyEmail(email);
-    console.log(result);
-  } catch (error) {
-    console.error("Error verifying email:", error);
-  }
-}
-
-checkEmail("user@example.com");
+const result: VerificationResult = verifyEmail("user@example.com");
+console.log(result);
 ```
 
-## API
+## API 🤖
 
-### `verifyEmail(email: string): Promise<VerificationResult>`
+### `verifyEmail(email: string): VerificationResult`
 
-Verifies an email address and returns a promise that resolves to a `VerificationResult` object.
+Verifies an email address and returns a `VerificationResult` object.
 
 #### Parameters
 
@@ -73,7 +58,7 @@ Verifies an email address and returns a promise that resolves to a `Verification
 
 #### Returns
 
-A Promise that resolves to a `VerificationResult` object with the following properties:
+A `VerificationResult` object with the following properties:
 
 - `isValid` (boolean): Indicates whether the email is valid.
 - `category` (string): The category of the email. Can be one of:
@@ -84,14 +69,14 @@ A Promise that resolves to a `VerificationResult` object with the following prop
   - `'unknown'`
 - `reason` (string, optional): If the email is invalid, this provides a reason.
 
-## Examples
+## Examples 📝
 
 ### Verifying a valid email
 
 ```javascript
 import { verifyEmail } from "verifymailjs";
 
-const result = await verifyEmail("user@gmail.com");
+const result = verifyEmail("user@gmail.com");
 console.log(result);
 // Output: { isValid: true, category: 'personal' }
 ```
@@ -101,39 +86,27 @@ console.log(result);
 ```javascript
 import { verifyEmail } from "verifymailjs";
 
-const result = await verifyEmail("invalid-email");
+const result = verifyEmail("invalid-email");
 console.log(result);
 // Output: { isValid: false, category: 'unknown', reason: 'Invalid email format' }
 ```
 
-## Error Handling
+## Limitations 🚧
 
-The `verifyEmail` function throws errors for network issues or other unexpected problems. Always use try-catch blocks or `.catch()` when using this function.
+This library performs basic email validation and categorization based on predefined lists and patterns. It does not perform SMTP verification or check for the actual existence of the email address. For most use cases, this level of verification is sufficient and much faster than performing network-based checks.
 
-```javascript
-import { verifyEmail } from "verifymailjs";
-
-try {
-  const result = await verifyEmail("user@example.com");
-  console.log(result);
-} catch (error) {
-  console.error("Error verifying email:", error);
-}
-```
-
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+## License 📜
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Support
+## Support 🛠️
 
-If you encounter any problems or have any questions, please open an issue on the [GitHub repository](https://github.com/xeven777).
+If you encounter any problems or have any questions, please open an issue on the [GitHub repository](https://github.com/xeven777/verifymailjs).
 
 ---
 
-Made with ❤️ by [Anish](https://bento.me/anish7)
+Made with ❤️ by Anish Biswas
