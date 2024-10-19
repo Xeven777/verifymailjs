@@ -1,6 +1,6 @@
 {
   "name": "verifymailjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A robust and modern JavaScript library for validating and categorizing email addresses. You can check if an email address is valid, disposable, role-based, free, or from a temporary email provider.",
   "main": "src/index.js",
   "types": "index.d.ts",
@@ -31,12 +31,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Xeven777/verifymailjs.git"
+    "url": "https://github.com/xeven777/verifymailjs.git"
   },
   "bugs": {
-    "url": "https://github.com/anishbiswas/verifymailjs/issues"
+    "url": "https://github.com/xeven777/verifymailjs/issues"
   },
-  "homepage": "https://github.com/anishbiswas/verifymailjs#readme",
+  "homepage": "https://github.com/xeven777/verifymailjs#readme",
   "engines": {
     "node": ">=14.0.0"
   },
