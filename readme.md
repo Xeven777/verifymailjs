@@ -1,17 +1,17 @@
-# Email Verifier
+# ✉️ verifymailjs - Email Verifier
 
 A robust and modern JavaScript library for validating and categorizing email addresses.
 
-## Features
+## ✨ Features
 
-- Validate email format and domain
-- Categorize emails (personal, business, educational, disposable)
-- Check for MX records
-- Verify SMTP connection
-- TypeScript support
-- Modern JavaScript (ES6+) syntax
+- ✅ Validate email format and domain
+- 📊 Categorize emails (personal, business, educational, disposable)
+- 📬 Check for MX records
+- 🔗 Verify SMTP connection
+- 🛠️ TypeScript support
+- 🚀 Modern JavaScript (ES6+) syntax
 
-## Installation
+## 📦 Installation
 
 Install the package using npm:
 
