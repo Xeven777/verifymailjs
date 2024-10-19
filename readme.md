@@ -16,13 +16,13 @@ A robust and modern JavaScript library for validating and categorizing email add
 Install the package using npm:
 
 ```bash
-npm install email-verifier
+npm install verifymailjs
 ```
 
 Or using yarn:
 
 ```bash
-yarn add email-verifier
+yarn add verifymailjs
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ yarn add email-verifier
 ### Basic Usage
 
 ```javascript
-import { verifyEmail } from "email-verifier";
+import { verifyEmail } from "verifymailjs";
 
 async function checkEmail(email) {
   try {
@@ -47,7 +47,7 @@ checkEmail("user@example.com");
 ### TypeScript Usage
 
 ```typescript
-import { verifyEmail, VerificationResult } from "email-verifier";
+import { verifyEmail, VerificationResult } from "verifymailjs";
 
 async function checkEmail(email: string): Promise<void> {
   try {
@@ -89,7 +89,7 @@ A Promise that resolves to a `VerificationResult` object with the following prop
 ### Verifying a valid email
 
 ```javascript
-import { verifyEmail } from "email-verifier";
+import { verifyEmail } from "verifymailjs";
 
 const result = await verifyEmail("user@gmail.com");
 console.log(result);
@@ -99,7 +99,7 @@ console.log(result);
 ### Verifying an invalid email
 
 ```javascript
-import { verifyEmail } from "email-verifier";
+import { verifyEmail } from "verifymailjs";
 
 const result = await verifyEmail("invalid-email");
 console.log(result);
@@ -111,7 +111,7 @@ console.log(result);
 The `verifyEmail` function throws errors for network issues or other unexpected problems. Always use try-catch blocks or `.catch()` when using this function.
 
 ```javascript
-import { verifyEmail } from "email-verifier";
+import { verifyEmail } from "verifymailjs";
 
 try {
   const result = await verifyEmail("user@example.com");
