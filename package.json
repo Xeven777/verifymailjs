@@ -1,6 +1,6 @@
 {
   "name": "verifymailjs",
-  "version": "1.0.5",
+  "version": "1.1.5",
   "description": "A robust and modern JavaScript library for validating and categorizing email addresses. You can check if an email address is valid, disposable, role-based, free, or from a temporary email provider.",
   "main": "src/index.js",
   "types": "index.d.ts",

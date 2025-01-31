@@ -3,7 +3,8 @@ const DOMAINS = {
     "gmail.com", "outlook.com", "hotmail.com", "yahoo.com", "icloud.com",
     "protonmail.com", "aol.com", "mail.com", "zoho.com", "yandex.com",
     "me.com", "msn.com", "live.com", "ymail.com", "rocketmail.com",
-    "fastmail.com", "gmx.com", "hushmail.com", "inbox.com", "tutanota.com"
+    "fastmail.com", "gmx.com", "hushmail.com", "inbox.com", "tutanota.com",
+    "hey.com", "pm.me", "mail.ru", "web.de"
   ]),
   disposable: new Set([
     "tempmail.com", "throwawaymail.com", "10minutemail.com", "guerrillamail.com",
@@ -40,7 +41,7 @@ const categorizeEmail = (localPart, domain) => {
   return 'unknown';
 };
 
-const verifyEmail = (email) => {
+const verifyEmail = (email, options = { strict: false }) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { isValid: false, category: 'unknown', reason: 'Invalid email format' };
   }
@@ -63,6 +64,10 @@ const verifyEmail = (email) => {
 
   if (category === 'disposable') {
     return { isValid: false, category, reason: 'Disposable email addresses are not allowed' };
+  }
+
+  if (options.strict && category !== 'personal' && category !== 'educational') {
+    return { isValid: false, category, reason: 'Domain not allowed in strict mode' };
   }
 
   return { isValid: true, category };
